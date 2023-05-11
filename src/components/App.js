@@ -14,7 +14,7 @@ import DeleteCardPopup from "./DeleteCardPopup";
 import Register from "./Register";
 import Login from "./Login";
 
-import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -247,7 +247,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <Header signOut={signOut} userEmail={userEmail} />
       <Routes>
-      <Route element={loggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" />} />
+      <Route path="*" element={loggedIn ? <Navigate to="/" replace /> : <Navigate to="sign-in" replace />} />
         <Route
           exact
           path="/"
@@ -271,7 +271,7 @@ function App() {
           element={<Register onRegister={userRegistration} />}
         ></Route>
       </Routes>
-      <Footer/>
+      {loggedIn && <Footer/>}
       <EditProfilePopup
         isLoading={isLoading}
         onUpdateUser={handleUpdateUser}

@@ -31,8 +31,8 @@ function Register(props) {
       <h1 className="authorization__title">Регистрация</h1>
       <form onSubmit={handleSubmit} className="authorization__form">
       <div className="authorization__input-block">
-        <input name="email" onChange={handleChange} className="authorization__input" placeholder="Email"></input>
-        <input name="password" onChange={handleChange} className="authorization__input" placeholder="Пароль"></input>
+        <input value={formValue.email || ""} name="email" onChange={handleChange} className="authorization__input" placeholder="Email" type="email"></input>
+        <input value={formValue.password || ""} name="password" onChange={handleChange} className="authorization__input" placeholder="Пароль" type="password"></input>
       </div>
         <button type="submit" className="authorization__button">Зарегистрироваться</button>
         {/* <p className="authorization__text">
