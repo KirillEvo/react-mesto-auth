@@ -247,19 +247,9 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <Header signOut={signOut} userEmail={userEmail} />
       <Routes>
-      {/* Вот в этой залупе вся загвоздка */}
-      <Route element={loggedIn ? <Navigate to="/" replace /> : <Navigate to="/sign-in" replace />} />
-        {/* <Route
-          path="/"
-          element={
-            loggedIn ? (
-              <Navigate to="/" replace />
-            ) : (
-              <Navigate to="/sign-in" replace />
-            )
-          }
-        /> */}
+      <Route element={loggedIn ? <Navigate to="/" /> : <Navigate to="/sign-in" />} />
         <Route
+          exact
           path="/"
           element={
             <ProtectedRoute

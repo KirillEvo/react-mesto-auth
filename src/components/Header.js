@@ -48,7 +48,7 @@ function Header(props) {
               </Link>
             }
           />
-          <Route path="/" element={<Block />} />
+          <Route exact path="/" element={<Block />} />
         </Routes>
     </header>
   );
