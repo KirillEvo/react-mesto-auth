@@ -1,0 +1,8 @@
+.header__authorization_signout {
+  color: #A9A9A9;
+}
+@media screen and (max-width: 880px) {
+  .header__authorization_signout {
+    margin-right: 0px;
+  }
+}
